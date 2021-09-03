@@ -1,0 +1,48 @@
+class Solution {
+    public int[] asteroidCollision(int[] asteriods) {
+        if(asteriods.length==0 || asteriods.length==1)
+              return asteriods;
+         Stack<Integer> st = new Stack<>();
+         st.push(asteriods[0]);
+         for(int i=1;i<asteriods.length;i++){
+             int c=0;
+             while(!st.isEmpty() && st.peek()>0 && asteriods[i]<0){
+                 int a=st.peek();
+                 int b=Math.abs(asteriods[i]);
+                 if(a==b){
+                     st.pop();
+                     c=1;
+                     break;
+                 }else{
+                     if(b>a)
+                         st.pop();
+                     else{
+                         c=1;
+                         break;
+                     }
+                 }
+             }
+             if(c==0)
+            st.push(asteriods[i]);
+         }
+        int a[]=new int[st.size()];
+        int k=0;
+        while(!st.isEmpty()){
+            a[k++]=st.peek();
+            st.pop();
+        }
+        int x=0,y=k-1;
+        while(x<y){
+            int t=a[x];
+            a[x]=a[y];
+            a[y]=t;
+            x++;
+            y--;
+        }
+        return a;
+    }
+}
+
+
+PROBLEM : https://leetcode.com/problems/asteroid-collision/submissions/
+LINK :  https://www.youtube.com/watch?v=Y82zCeJft-Q
