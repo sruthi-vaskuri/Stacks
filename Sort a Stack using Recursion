@@ -1,0 +1,35 @@
+class GfG{
+    public void insert(Stack<Integer> s,int value){
+        if(s.isEmpty())
+            s.push(value);
+        else if(s.peek()<value)
+            s.push(value);
+        else{
+            int a=s.pop();
+            insert(s,value);
+            s.push(a);
+        }
+    }
+    public void reverse(Stack<Integer> s){
+        if(s.isEmpty())
+           return;
+        else{
+            int a=s.pop();
+            reverse(s);
+            insert(s,a);
+        }
+    }
+	public Stack<Integer> sort(Stack<Integer> s)
+	{
+		//add code here.
+		reverse(s);
+		return s;
+	}
+}
+
+
+
+LINK : https://practice.geeksforgeeks.org/problems/sort-a-stack/1/?category[]=Stack&category[]=Stack&company[]=Amazon&company[]=Amazon&page=1&query=category[]Stackcompany[]Amazonpage1company[]Amazoncategory[]Stack
+
+
+REFERENCE : https://www.youtube.com/watch?v=XNAv8NrAwng
