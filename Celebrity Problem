@@ -1,0 +1,22 @@
+def celebrity(self, M, n):
+        # code here 
+        x=0
+        y=n-1
+        while(x<y):
+            if M[x][y]==0:
+               y-=1
+            else:
+                x+=1
+        
+        for i in M[x]:
+            if i==1:
+                return -1
+        for i in range(n):
+            if M[i][x]==0 and i!=x:
+                return -1
+        return x
+        
+        
+  Link : https://practice.geeksforgeeks.org/problems/the-celebrity-problem/1/?category[]=Stack&category[]=Stack&company[]=Amazon&company[]=Amazon&page=1&query=category[]Stackcompany[]Amazonpage1company[]Amazoncategory[]Stack
+  
+  REFERENCE : https://www.youtube.com/watch?v=aENYremq77I&t=684s
