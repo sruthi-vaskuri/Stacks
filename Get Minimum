@@ -1,0 +1,56 @@
+class GfG
+{
+    int minEle;
+    Stack<Integer> s=new Stack<>();
+
+    /*returns min element from stack*/
+    int getMin()
+    {
+	// Your code here
+	if(s.isEmpty())
+	   return -1;
+	return minEle;
+    }
+    
+    /*returns poped element from stack*/
+    int pop()
+    {
+	// Your code here
+	int c=0;
+	   if(s.isEmpty())
+	    return -1;
+	   if(s.peek()>=minEle)
+	      return s.pop();
+	   else
+	   {
+	       c=minEle;
+	       minEle=(2*minEle)-s.pop();
+	   }
+	   return c;
+    }
+
+    /*push element x into the stack*/
+    void push(int x)
+    {
+	// Your code here	
+	if(s.size()==0)
+	{
+	     minEle=x;
+	    s.push(x);
+	}
+	else if(x>=minEle)
+	  s.push(x);
+	 else
+	 {
+	     int c=(2*x)-minEle;
+	     minEle=x;
+	     s.push(c);
+	 }
+    }	
+}
+
+
+
+LINK : https://practice.geeksforgeeks.org/problems/get-minimum-element-from-stack/1/?category[]=Stack&category[]=Stack&company[]=Amazon&company[]=Amazon&page=1&query=category[]Stackcompany[]Amazonpage1company[]Amazoncategory[]Stack
+
+REFERENCE : https://www.youtube.com/watch?v=QMlDCR9xyd8
