@@ -1,0 +1,22 @@
+class GfG{
+	public Stack<Integer> sort(Stack<Integer> s)
+	{
+		//add code here.
+		Stack<Integer> st=new Stack<>();
+		while(!s.isEmpty())
+		{
+		    int temp=s.pop();
+		    while(!st.isEmpty() && st.peek()>temp)
+		         s.push(st.pop());
+		    st.push(temp);
+		}
+		return st;
+	}
+}
+
+
+
+
+LINK : https://practice.geeksforgeeks.org/problems/sort-a-stack/1/?category[]=Stack&category[]=Stack&company[]=Amazon&company[]=Amazon&page=1&query=category[]Stackcompany[]Amazonpage1company[]Amazoncategory[]Stack
+
+REFERENCE : https://www.youtube.com/watch?v=933UoS5iZPQ
