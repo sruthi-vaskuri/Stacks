@@ -1,0 +1,30 @@
+class Parenthesis
+{
+    // Function to return if the paranthesis are balanced or not
+    static boolean ispar(String s)
+    {
+        // add your code here
+     
+		    Stack<Character> st=new Stack<>();
+		    int flag=0;
+		    for(int i=0;i<s.length();i++)
+		    {
+		        if(s.charAt(i)=='[' || s.charAt(i)=='(' || s.charAt(i)=='{')
+		        st.push(s.charAt(i));
+		        else if( !st.empty() && ((s.charAt(i)==']' && st.peek()=='[') || (s.charAt(i)==')' && st.peek()=='(') || (s.charAt(i)=='}' && st.peek()=='{')))
+		        st.pop();
+		        else
+		        {
+		        flag=1;
+		        break;
+		        }
+		    }
+		    if(flag==0 && st.empty())
+		    return true;
+		    return false;
+    }
+}
+
+
+
+LINK : https://practice.geeksforgeeks.org/problems/parenthesis-checker2744/1/?category[]=Stack&category[]=Stack&company[]=Amazon&company[]=Amazon&page=1&query=category[]Stackcompany[]Amazonpage1company[]Amazoncategory[]Stack
